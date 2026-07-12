@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from .models import Seleccion
 
-# Create your views here.
+def inicio(request):
+    return render(request, 'Home.html')
+
+def selecciones(request):
+    cajaSelecciones=Seleccion.objects.all()
+    return render(request, 'selecciones.html', {'selecciones': cajaSelecciones})
