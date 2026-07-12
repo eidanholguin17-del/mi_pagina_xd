@@ -2,39 +2,49 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Subir Anime Favorito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LowCow - Subir Anime</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        body { background-color: #121214; color: #f8f9fa; }
+        .form-container { max-width: 500px; margin: 50px auto; background-color: #1a1a1e; border: 1px solid #2d2d35; }
+    </style>
 </head>
 <body>
-    <h1>Agregar Nuevo Anime a LowCow</h1>
-    
-    <!-- El enctype="multipart/form-data" permite enviar los archivos de imagen -->
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <p>
-            <label>Nombre del Anime:</label><br>
-            <input type="text" name="anime" required>
-        </p>
-        
-        <p>
-            <label>Personaje (Máximo 1 carácter):</label><br>
-            <input type="text" name="personaje" maxlength="1" required>
-        </p>
-        
-        <p>
-            <label>Portada del Anime:</label><br>
-            <input type="file" name="portada" accept="image/*" required>
-        </p>
-        
-        <p>
-            <label>Logo del Anime:</label><br>
-            <input type="file" name="logo" accept="image/*" required>
-        </p>
-        
-        <button type="submit">Subir Anime</button>
-    </form>
-    
-    <br>
-    <a href="{% url 'brayan' %}">Volver a la lista</a>
+    <div class="container">
+        <div class="form-container p-4 rounded-3 shadow-lg">
+            <h2 class="text-center mb-4 text-primary fw-bold">Agregar Nuevo Anime</h2>
+            
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label class="form-label">Nombre del Anime</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" name="anime" placeholder="Ej: Dragon Ball Z" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Personaje (1 inicial/carácter)</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" name="personaje" maxlength="1" placeholder="Ej: G" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Portada del Anime</label>
+                    <input type="file" class="form-control bg-dark text-white border-secondary" name="portada" accept="image/*" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Logo del Anime</label>
+                    <input type="file" class="form-control bg-dark text-white border-secondary" name="logo" accept="image/*" required>
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Subir a LowCow</button>
+                    <a href="{% url 'brayan' %}" class="btn btn-outline-secondary">Cancelar y Volver</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
+

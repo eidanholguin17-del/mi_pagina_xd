@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LowCow - Inicio</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        body { background-color: #121214; color: #f8f9fa; }
+        .hero-section { min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="container hero-section text-center">
+        <div class="p-5 bg-dark rounded-4 shadow-lg border border-secondary border-opacity-25">
+            <h1 class="display-3 fw-bold text-primary mb-3">🔥 LowCow</h1>
+            <p class="lead text-muted mb-4">Bienvenido a tu catálogo definitivo de animes favoritos y niveles de poder.</p>
+            <div class="d-grid gap-3 d-md-block">
+                <a href="{% url 'brayan' %}" class="btn btn-primary btn-lg px-4 me-md-2">Ver Galería de Animes</a>
+                <a href="{% url 'subir_anime' %}" class="btn btn-outline-light btn-lg px-4">Agregar Nuevo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
