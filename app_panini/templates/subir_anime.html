@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Anime Favorito</title>
+</head>
+<body>
+    <h1>Agregar Nuevo Anime a LowCow</h1>
+    
+    <!-- El enctype="multipart/form-data" permite enviar los archivos de imagen -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <p>
+            <label>Nombre del Anime:</label><br>
+            <input type="text" name="anime" required>
+        </p>
+        
+        <p>
+            <label>Personaje (Máximo 1 carácter):</label><br>
+            <input type="text" name="personaje" maxlength="1" required>
+        </p>
+        
+        <p>
+            <label>Portada del Anime:</label><br>
+            <input type="file" name="portada" accept="image/*" required>
+        </p>
+        
+        <p>
+            <label>Logo del Anime:</label><br>
+            <input type="file" name="logo" accept="image/*" required>
+        </p>
+        
+        <button type="submit">Subir Anime</button>
+    </form>
+    
+    <br>
+    <a href="{% url 'brayan' %}">Volver a la lista</a>
+</body>
+</html>

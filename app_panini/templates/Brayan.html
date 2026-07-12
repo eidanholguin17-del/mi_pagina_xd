@@ -1,6 +1,22 @@
 <h1>LowCow</h1>
 <ul>
     {% for anime in animes %}
-        <li>{{anime}}</li>
+        <li style="margin-bottom: 30px; list-style: none;">
+            <!-- 1. Muestra el texto del nombre del anime -->
+            <h2>{{ anime.anime }}</h2>
+            
+            <!-- 2. Muestra la Portada usando su URL automática -->
+            <div>
+                <img src="{{ anime.Portada_Anime.url }}" alt="Portada" width="200" style="border-radius: 8px;">
+            </div>
+            
+            <!-- 3. Muestra el Logo usando su URL automática -->
+            <div>
+                <img src="{{ anime.Logo_anime.url }}" alt="Logo" width="100">
+            </div>
+            <hr>
+        </li>
+    {% empty %}
+        <li>No hay animes registrados todavía.</li>
     {% endfor %}
 </ul>

@@ -4,7 +4,7 @@ from django.db import models
 
 class anime_favorito(models.Model):
     anime = models.CharField(max_length=100)
-    personaje = models.CharField(max_length=1)
+    personaje = models.CharField(max_length=100)
     Portada_Anime = models.ImageField(upload_to='Portadas/')
     Logo_anime = models.ImageField(upload_to='animes_L/')
 
@@ -13,7 +13,7 @@ class anime_favorito(models.Model):
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
-    lvl_power = models.CharField(max_length=50)
+    lvl_power = models.CharField(max_length=999)
     tier = models.IntegerField()
     apodo = models.CharField(max_length=50)
     foto = models.ImageField(upload_to='jugadores/')
