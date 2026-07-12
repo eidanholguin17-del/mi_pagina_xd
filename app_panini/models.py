@@ -65,8 +65,4 @@ class guerrero(Personaje):
         self.espada = espada
 
 
-guts = guerrero("Guts", 80, 10, 20, 100, 10, 50)
-guts.seleccionar_arma()
-print(guts.espada)
-
 
