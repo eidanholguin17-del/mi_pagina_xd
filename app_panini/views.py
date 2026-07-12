@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import Seleccion
+from .models import anime_favorito
 
 def inicio(request):
     return render(request, 'Home.html')
 
-def selecciones(request):
-    cajaSelecciones=Seleccion.objects.all()
-    return render(request, 'selecciones.html', {'selecciones': cajaSelecciones})
+def brayan(request):
+    cajaAnime = anime_favorito.objects.all()
+    return render(request, 'Brayan.html', {'animes': cajaAnime})
+    
